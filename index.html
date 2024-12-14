@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Weather App</h1>
+        <input type="text" id="city" placeholder="Enter city name" class="city-input">
+        <button id="getWeather" class="btn">Get Weather</button>
+
+        <div id="weatherInfo" class="weather-info hidden">
+            <h2 id="cityName" class="city-name"></h2>
+            <div id="dailyForecast" class="daily-forecast"></div>
+        </div>
+
+        <!-- AQI Info Section -->
+        <div id="aqiInfo" class="aqi-info hidden">
+            <h3>Air Quality Index (AQI): <span id="aqi"></span></h3>
+            <p id="aqiTips"></p>
+        </div>
+
+        <p id="error" class="error hidden">City not found. Please try again.</p>
+    </div>
+
+    <div class="location-modal" id="locationModal">
+        <div class="modal-content">
+            <h2>Permission to Access Location</h2>
+            <p>We need your permission to access your location for weather updates.</p>
+            <div class="buttons-container">
+                <button class="btn" id="allowBtn">Allow</button>
+                <button class="btn" id="denyBtn">Don't Allow</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="darkModeToggle" class="dark-mode-btn">
+        <i id="darkModeIcon" class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

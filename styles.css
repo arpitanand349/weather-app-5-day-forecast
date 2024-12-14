@@ -1,0 +1,283 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 2rem;
+    color: #2d3e50;
+    margin-bottom: 20px;
+}
+
+body.dark-mode .title {
+    color: #b0c4de;
+}
+
+.city-input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .city-input {
+    background-color: #2b2b2b;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.city-input:focus {
+    border-color: #4fa3f7;
+}
+
+body.dark-mode .city-input:focus {
+    border-color: #4fa3f7;
+}
+
+.btn {
+    background-color: #4fa3f7;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .btn {
+    background-color: #3578e5;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #3578e5;
+}
+
+.weather-info {
+    margin-top: 20px;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.temp {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+body.dark-mode .temp {
+    color: #ddd;
+}
+
+.description {
+    font-size: 1rem;
+    color: #777;
+}
+
+body.dark-mode .description {
+    color: #aaa;
+}
+
+.city-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4fa3f7;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .city-name {
+    color: #87cefa;
+}
+
+.error {
+    color: #ff4747;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+body.dark-mode .error {
+    color: #ff6b6b;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.dark-mode-btn i {
+    color: #2d3e50;
+    transition: color 0.3s;
+}
+
+body.dark-mode .dark-mode-btn i {
+    color: #fff;
+}
+
+.location-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    max-width: 350px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: #fff;
+}
+
+.location-modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.location-modal p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.location-modal .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.location-modal .btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 45%;
+}
+
+body.dark-mode .btn {
+    background-color: #3578e5;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #3578e5;
+}
+
+.aqi-info {
+    margin-top: 20px;
+}
+
+.aqi-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.aqi-info p {
+    font-size: 1rem;
+    color: #777;
+}
+
+body.dark-mode .aqi-info h3,
+body.dark-mode .aqi-info p {
+    color: #ddd;
+}
+
+/* New styling for 5-day forecast */
+.daily-forecast {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.day-forecast {
+    text-align: center;
+}
+
+.day-forecast img {
+    width: 40px;
+    height: 40px;
+}
+
+.day-forecast p {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.day-forecast .date {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #4fa3f7;
+}
